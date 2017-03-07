@@ -16,7 +16,7 @@ class Calculator extends React.Component {
             displayPrev: '',
             afterEquals: false
         }
-        this.handleInput = this.props.inputHandler || this.defaultHandleInput.bind(this);
+        this.handleInput = (this.props.inputHandler || this.defaultHandleInput.bind(this));
         this.numberClicked = this.numberClicked.bind(this);
         this.operatorClicked = this.operatorClicked.bind(this);
         this.calculate = this.calculate.bind(this);
@@ -114,6 +114,7 @@ class Calculator extends React.Component {
             <div>
                 <p>{this.state.displayPrev}</p>
                 <span><input type="number" value={this.state.display} readOnly /></span><br />
+                {this.props.numberBlock}
                 <Numbers numberPressed={this.handleInput} />
                 <Operators operatorPressed={this.handleInput} />
             </div>

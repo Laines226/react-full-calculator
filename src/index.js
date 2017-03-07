@@ -17,7 +17,7 @@ function handleInputAfter(input){
 }
 
 render(
-    <Calculator extraInputHandler={[handleInput, handleInputAfter]} />, document.getElementById('app')
+    <Calculator numnberBlock={<BasicNumbers numberPressed/>} inputHandler={handleInput} extraInputHandler={[handleInput, handleInputAfter]} />, document.getElementById('app')
 );
 
 //  numberBlock={<BasicNumbers />} operatorBlock={<BasicOperators />}
